@@ -22,7 +22,7 @@ class UserController extends Controller
 
     public function getUsers(Request $request)
     {
-        $perPage = $request->input('perPage', 2);
+        $perPage = $request->input('perPage', 4);
         $page = $request->input('page', 1);
 
         $users = User::paginate($perPage, ['*'], 'page', $page);
